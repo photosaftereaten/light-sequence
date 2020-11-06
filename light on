@@ -1,17 +1,46 @@
-seconds= float(0)
-minutes= float(0)
-hours= float(0)
+import time
+import os
 
-run = input ("Press r to start the program")
+seconds = float(0)
+minutes = float(0)
+hours = float(0)
 
-while run.lower() =="r":
-    if seconds > 59:
-        seconds = 0
-        minutes = minutes+1
-    if minutes > 59:
-        minutes = 0
-        hours = hours+1
-    os.system('cls')
-    seconds = (seconds + .1)
-    print(hours,":",minutes,":",seconds)
-    time.sleep(.1)
+# run = input("Press r to start the program")
+
+# while run.lower() =="r":
+#     if seconds > 59:
+#         seconds = 0
+#         minutes = minutes+1
+#     if minutes > 59:
+#         minutes = 0
+#         hours = hours+1
+#     os.system('cls')
+#     seconds = (seconds + .1)
+#     print(hours,":",minutes,":",seconds)
+#     time.sleep(.1)
+#     # if seconds > 5:
+#     #     break
+#     user_imp = input()
+#     if user_imp == "q":
+#         break
+
+
+def stop_watch(seconds, minutes, hours):
+    run = input("Press r to start the program")
+
+    while run.lower() == "r":
+        if seconds > 59:
+            seconds = 0
+            minutes = minutes + 1
+        if minutes > 59:
+            minutes = 0
+            hours = hours + 1
+        os.system('cls')
+        seconds = (seconds + .1)
+        print(hours, ":", minutes, ":", seconds)
+        time.sleep(.1)
+        # if seconds > 5:
+        #     break
+stop_watch(seconds, minutes, hours)
+
+print("yeet")
