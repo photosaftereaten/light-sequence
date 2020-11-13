@@ -1,4 +1,6 @@
-import time, os
+import time
+import os
+import RPi.GPIO as GPIO
 
 seconds = int(0)
 minutes = int(0)
@@ -36,32 +38,95 @@ def stop_watch(seconds, minutes, hours):
             hours = hours + 1
         os.system('cls')
         seconds = (seconds + 1)
-        #print(hours, ":", minutes, ":", seconds)
+        # print(hours, ":", minutes, ":", seconds)
         time.sleep(1)
-        
+        if seconds in range (5,8) :
+            print("time for your first break!")
+            GPIO.setmode(GPIO.BCM)
+            GPIO.setwarnings(False)
+            GPIO.setup(18,GPIO.OUT)
+            print ("LED on")
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            print ("LED off")
+            GPIO.output(18,GPIO.LOW)
         # creating mulitple "break times" for an 8 hour work day.
-        
-        if seconds == 5 :
-            print("time for your first break!")  
         if seconds == 10 :
             print("time for a break")
+            GPIO.setmode(GPIO.BCM)
+            GPIO.setwarnings(False)
+            GPIO.setup(18,GPIO.OUT)
+            print ("LED on")
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            print ("LED off")
+            GPIO.output(18,GPIO.LOW)
         if seconds == 15 :
             print("time for another break, almost lunch time.")
+            GPIO.setmode(GPIO.BCM)
+            GPIO.setwarnings(False)
+            GPIO.setup(18,GPIO.OUT)
+            print ("LED on")
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            print ("LED off")
+            GPIO.output(18,GPIO.LOW)
         if seconds == 20 :
             print("time for lunch!")
-            
+            GPIO.setmode(GPIO.BCM)
+            GPIO.setwarnings(False)
+            GPIO.setup(18,GPIO.OUT)
+            print ("LED on")
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            print ("LED off")
+            GPIO.output(18,GPIO.LOW)
         # this interval must be spaced out by an "hour"
         # as the user just came back from lunch.
-        
         if seconds == 30 :
             print("time for a break")
+            GPIO.setmode(GPIO.BCM)
+            GPIO.setwarnings(False)
+            GPIO.setup(18,GPIO.OUT)
+            print ("LED on")
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            print ("LED off")
+            GPIO.output(18,GPIO.LOW)
         if seconds == 35 :
             print("time for a break")
+            GPIO.setmode(GPIO.BCM)
+            GPIO.setwarnings(False)
+            GPIO.setup(18,GPIO.OUT)
+            print ("LED on")
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            print ("LED off")
+            GPIO.output(18,GPIO.LOW)
         if seconds == 40 :
             print("almost time to clock out! ")
+            GPIO.setmode(GPIO.BCM)
+            GPIO.setwarnings(False)
+            GPIO.setup(18,GPIO.OUT)
+            print ("LED on")
+            GPIO.output(18,GPIO.HIGH)
+            time.sleep(1)
+            print ("LED off")
+            GPIO.output(18,GPIO.LOW)
         if seconds == 45:
             break
             
                        
 stop_watch(seconds, minutes, hours)
 print ("you made it! Enjoy your night.")
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(18,GPIO.OUT)
+print ("LED on")
+GPIO.output(18,GPIO.HIGH)
+GPIO.output(18,GPIO.LOW)
+GPIO.output(18,GPIO.HIGH)
+GPIO.output(18,GPIO.LOW)
+time.sleep(1)
+print ("LED off")
+GPIO.output(18,GPIO.LOW)
